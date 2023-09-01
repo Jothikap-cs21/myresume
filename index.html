@@ -1,3 +1,5 @@
+<div id="htmlContent">
+
 <html>
 <head>
 <div id="header"></div>
@@ -122,6 +124,35 @@ text-indent:50px;
 <p id="Date"><b>Date : </b>        </p>
                                <p id="signature"><b>signature : </b></p>
 </div>
+
+
+</div>
+
+<div id="editor"></div>
+
+<center>
+
+<p>
+
+
+<button onclick="printDiv('htmlContent')">Print / Save Pdf</button>
+
+</p>
+
+</center>
+<script type="text/javascript">
+
+      function printDiv(div_id) 
+    	{
+    	 
+        var divToPrint=document.getElementById(div_id);
+    	  var newWin=window.open('','Print-Window');
+    	  newWin.document.open();
+    	  newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+    	  newWin.document.close();
+    	  setTimeout(function() { newWin.close();},10);
+    	}
+</script>
 </body>
 </html>
 
